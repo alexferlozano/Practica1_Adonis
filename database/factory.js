@@ -16,7 +16,9 @@ const Factory = use('Factory')
 
  Factory.blueprint('App/Models/Post', (faker) => {
    return {
-     titulo: faker.username(),
-     autor: faker.username()
+     titulo: faker.sentence({ words: 3 }),
+     descripcion: faker.paragraph(),
+     autor: faker.username(),
+     edad: faker.age()
    }
  })

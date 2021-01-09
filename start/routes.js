@@ -18,7 +18,7 @@ const Route = use('Route')
 
 Route.group(() => {
   Route.get('show', 'PostController.store')
-  Route.post('create', 'PostController.create')
-  Route.put('edit/:id', 'PostController.edit')
+  Route.post('create', 'PostController.create').middleware(['edad'])
+  Route.put('edit/:id', 'PostController.edit').middleware(['edad'])
   Route.delete('delete/:id', 'PostController.delete')
 }).prefix('api/posts/')

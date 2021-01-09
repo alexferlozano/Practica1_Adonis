@@ -7,8 +7,10 @@ class PostSchema extends Schema {
   up () {
     this.create('posts', (table) => {
       table.increments()
-      table.string('titulo', 100).notNullable().unique()
-      table.string('autor', 100).notNullable().unique()
+      table.string('titulo', 100).notNullable()
+      table.text('descripcion')
+      table.string('autor', 100).notNullable()
+      table.integer('edad')
       table.timestamps()
     })
   }
